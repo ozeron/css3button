@@ -1,54 +1,92 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <!--meta http-equiv="X-UA-Compatible" content="chrome=1"-->
-    <title>Css3button by ozeron</title>
-    <link rel="stylesheet" href="stylesheets/main.css">
-    <link rel="stylesheet" href="stylesheets/normalize.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<head>
+  <meta charset="utf-8">
+  <!--meta http-equiv="X-UA-Compatible" content="chrome=1"-->
+  <title>Css3button by ozeron</title>
+
+  <link rel="stylesheet" href="libs/jquery-ui/jquery-ui.min.css">
+  <link rel="stylesheet" href="stylesheets/normalize.css">
+  <link rel="stylesheet" href="stylesheets/main.css">
+
+  <script src="libs/jquery-ui/external/jquery/jquery.js"></script>
+  <script src="libs/jquery-ui/jquery-ui.min.js"></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Css3button</h1>
-        <p>Generate css3 button</p>
-        <p class="view"><a href="https://github.com/ozeron/css3button">View the Project on GitHub <small>ozeron/css3button</small></a></p>
-        <ul>
-          <li><a href="https://github.com/ozeron/css3button/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/ozeron/css3button/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/ozeron/css3button">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <form action="">
-          <fieldset>
-            <h2>Option</h2>
-            <label for="border-radius">Border-radius</label>
-            <input type="range" id="border-radius" min="0" max="10"></input>
-            <label for="border-radius">Border-size</label>
-            <input type="range" id="border-size" min="0" max="10"></input>
-            <label for="border-text">Text</label>
-            <input type="text" id="border-text" placeholder="button-text"></input>
-          </fieldset>
-          <fieldset>
-            <h2>Result</h2>
-            <input type="button"></input>
-          </fieldset>
-          <fieldset>
-            <textarea id="html-code" placeholder="HTML code" cols="30" rows="10"></textarea>
-            <textarea id="css-code" placeholder="CSS code" cols="30" rows="10"></textarea>
-            <input type="text" placeholder="email"></input>
-          </fieldset>
-        </form>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/ozeron">ozeron</a></p>
-        <p><small>Hosted on GitHub Pages</small></p>
-      </footer>
-    </div>
-  </body>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Css3button</h1>
+      <p>Generate css3 button</p>    
+    </header>
+    <section>
+      <div class="setup">
+        <h2>Option</h2>
+        <div>        
+          <label for="button-text">Text</label>
+          <input type="text" id="button-text" placeholder="button name"></input>
+        </div>
+        <div>
+          <label for="button-width">Width</label>
+          <div class="slider" id="button-width"></div>
+        </div>
+        <div>
+          <label for="button-height">Height</label>
+          <div class="slider" id="button-height"></div>
+        </div>
+        <div>
+          <label for="border-radius">Border-radius</label>
+          <div class="slider" id="border-radius"></div>
+        </div>
+        <div>
+          <label for="border-radius">Border-size</label>
+          <div class="slider" id="border-size"></div>
+        </div>
+        <div>
+          <label for="font-size">Font size</label>
+          <div class="slider" id="font-size"></div>
+        </div>
+      </div>
+      <div class="generating">
+        <h2>Result</h2>
+        <button></button>
+      </div>
+      <div class="code">
+        <h2>HTML && CSS Code</h2>
+        <xmp id="html-code" placeholder="HTML code" cols="30" rows="10" contenteditable="true" readonly>
+        </xmp>
+        <xmp id="css-code" placeholder="CSS code" cols="30" rows="10" contenteditable="true" readonly></xmp>
+        <input type="text" placeholder="email"></input>
+      </div>
+    </section>
+    <footer>
+      <p>
+      This project is maintained by <a href="https://github.com/ozeron">ozeron</a>
+      </p>
+      <p class="view">
+        <a href="https://github.com/ozeron/css3button">
+          View the Project on GitHub
+        </a>
+      </p>
+      <ul class="download">
+        <li>
+          <a href="https://github.com/ozeron/css3button/zipball/master">
+            Download <strong>ZIP File</strong>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ozeron/css3button/tarball/master">
+            Download <strong>TAR Ball</strong>
+          </a>
+        </li>
+      </ul>
+      <p><small>Hosted on GitHub Pages</small></p>
+    </footer>
+  </div>
+  <script src="javascripts/script.js" type="text/javascript" charset="utf-8"></script>
+</body>
 </html>
