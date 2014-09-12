@@ -8,13 +8,40 @@
   display: table;
   clear: both;
 }
+a:visited, a {
+  color: white;
+}
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
 button {
+  background-color: #c24c4c;
+  color: white;
   display: inline-block;
   border-style: solid;
-  border-color: black;
+  border-color: #7f3636;
   max-width: 100% !important;
 }
-
+header {
+  background-color: #25383b;
+  color: white;
+}
+header h1 {
+  text-align: center;
+}
+footer {
+  background-color: #25383b;
+  color: white;
+  text-align: center;
+}
+input[type="text"] {
+  max-width: 100%;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  text-align: center;
+  display: block;
+}
 .wrapper {
   width: 90%;
   margin: 0 auto;
@@ -28,21 +55,56 @@ button {
 .download {
   display: none;
 }
+
+
+.setup > div {
+  margin: 20px;
+}
+.setup label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
 .slider {
   width: 95%;
 }
-.result {
+
+.code-wrapper{
+  text-align: center;
+  width: 100%;
+}
+
+.result,.code {
   text-align: center;
 }
+.slider, .ui-slider-range {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+.ui-slider-range {
+  background-color: #e26161;
+}
+.ui-state-hover {
+  background-color: #7f3636;
+}
+.ui-slider-handle {
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  background-color: #c24c4c !important;
+}
+
 xmp {
+  display: inline-block;
   width: 100%;
   max-width: 300px;
   height: 300px;
   border: 1px solid black;
-  float: left;
+  text-align: left;
 }
 
-@media (min-width: 330px) and (max-width: 920px) {
+@media (min-width: 330px){
   .download {
     display: block;
   }
@@ -51,15 +113,38 @@ xmp {
   margin: 0 auto;
   float: left;;
   }
+  .download {
+    list-style: none;
+    padding: 0px;
+  }
+
+  .download li {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    border: 2px #7f3636 solid;
+    background-color: #c24c4c;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+  }
+  .setup {
+    border-right: 1px dashed #c24c4c;
+  }
+  .code {
+    border-top: 1px dashed #c24c4c;
+    clear: both;
+  }
 }
 
-@media (min-width: 921px) {
-  .download {
-    display: block;
+@media (min-width: 675px){
+  .code {
+    border-top: 1px dashed #c24c4c;
+    clear: both;
   }
-  .setup, .result, .code {
-  width: 33%;
-  margin: 0 auto;
-  float: left;;
+  .code-wrapper{
+    text-align: center;
+    float: left;
+    width: 50%;
   }
 }

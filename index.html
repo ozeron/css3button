@@ -14,8 +14,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 <body>
-  <div class="wrapper">
-    <header>
+  <header>
+    <div class="wrapper">
       <h1>Css3button</h1>
       <p>Generate css3 button</p>
       <ul class="download">
@@ -29,8 +29,10 @@
             Download <strong>TAR Ball</strong>
           </a>
         </li>
-      </ul>    
-    </header>
+      </ul>  
+    </div>  
+  </header>
+  <div class="wrapper">
     <section>
       <div class="setup">
         <h2>Option</h2>
@@ -65,12 +67,18 @@
       </div>
       <div class="code">
         <h2>HTML && CSS Code</h2>
-        <xmp id="html-code" placeholder="HTML code" cols="30" rows="10" contenteditable="true" readonly>
-        </xmp>
-        <xmp id="css-code" placeholder="CSS code" cols="30" rows="10" contenteditable="true" readonly></xmp>
+        <div class="code-wrapper">
+          <xmp id="html-code" placeholder="HTML code" cols="30" rows="10" contenteditable="true" readonly>
+          </xmp>
+        </div>
+        <div class="code-wrapper">
+          <xmp id="css-code" placeholder="CSS code" cols="30" rows="10" contenteditable="true" readonly></xmp>
+        </div>
       </div>
     </section>
-    <footer>
+  </div>
+  <footer>
+    <div class="wrapper">
       <p>
       This project is maintained by <a href="https://github.com/ozeron">ozeron</a>
       </p>
@@ -80,8 +88,8 @@
         </a>
       </p>
       <p><small>Hosted on GitHub Pages</small></p>
-    </footer>
-  </div>
+    </div>
+  </footer>
   <script src="libs/jquery-ui/external/jquery/jquery.js"></script>
   <script src="libs/jquery-ui/jquery-ui.min.js"></script>
   <script src="javascripts/script.js" type="text/javascript" charset="utf-8"></script>

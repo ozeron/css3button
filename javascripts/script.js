@@ -20,7 +20,7 @@ function refreshButton() {
   html_code = "<button>"+inner_text+"</button";
   css_code = "button {\n";
   for ( i in css ){
-    css_code += i + ":" + css[i] +";\n";  
+    css_code +="  " + i + ":" + css[i] +";\n";  
   }
   css_code += "}\n"
 
@@ -41,9 +41,9 @@ $(function() {
   });
   $("#button-width").slider({ value:100 });
   $("#button-height").slider({ value:50 });
-  $("#border-size").slider({ value: 3, max: 10})
+  $("#border-size").slider({ value: 7, max: 10})
   $("#button-text").val("Click me!");
-  $("#font-size").slider({ min: 10, max: 48})
+  $("#font-size").slider({ min: 10, value:36, max: 48})
 
   $("#button-text").bind("input",refreshButton);
   $("button").click( function( event) { event.preventDefault(); })
