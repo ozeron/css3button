@@ -2,6 +2,12 @@ var data = (function(){
   function _setDefault(a,value){
     return typeof a !== 'undefined' ? a : value;
   };
+  function checkIfEmpty(val) {
+    return val === null 
+        || val === undefined 
+        || val === "" 
+        || val === 0;    
+  };
   function generateCss(){
     var code = "button {\n";
     for ( i in data.css ){
@@ -20,6 +26,7 @@ var data = (function(){
     this.border_radius = $("#border-radius").slider("value");
     this.border_size = $("#border-size").slider("value");
     this.inner_text = $("#button-text").val();
+    this.inner_text = checkIfEmpty(this.inner_text) ? "button name" : this.inner_text;
     this.size = $("#font-size").slider("value");
     this.css = {
       "width": 100 + this.width*2,
@@ -61,16 +68,36 @@ var data = (function(){
     setXmpCssCode:setCssCode,
     setXmpHtmlCode:setHtmlCode,
     generateButtonHtml:generateHtml,
-    generateButtonCss:generateCss
+    generateButtonCss:generateCss,
+    empty:checkIfEmpty
   }; 
 })();
 
 var action = (function(){
+  var form = $("#send-form");
+  function addInputData(name,value){
+    var id = "#"+name+"-input",
+      input = $(id);
+    if (input.length === 0){
+      $('<input />').attr('type', 'hidden')
+            .attr('id', name+"-input")
+            .attr('name', name)
+            .attr('value', value)
+            .appendTo('#send-form'); 
+    }
+    else {
+      input.val(value);
+    }
+    console.log($(id));
+  }
   function submit(event){
-    alert("hey!");
     $("#send-form").submit();
-    return false;
-
+    addInputData("width",data.width);
+    addInputData("height",data.height);
+    addInputData("size",data.size);
+    addInputData("border_size",data.border_size);
+    addInputData("border_radius",data.border_radius);
+    addInputData("inner_text",data.inner_text);
   }
   return{
     submit:submit
@@ -78,20 +105,8 @@ var action = (function(){
 })();
 
 var app = (function(){
-  var defaultButtonName = "button name";
   function refreshButton() {
     data.update();
-  };
-  function checkIfEmpty(event) {
-    data.update();
-    //cross browser event
-    event = event || window.event 
-    if ($(event.target).val() === ""){
-      data.inner_text = defaultButtonName;
-      data.setButtonHtml();
-      data.generateButtonHtml();
-      data.setXmpHtmlCode();
-    }    
   };
   return {
     init:function() {
@@ -110,7 +125,6 @@ var app = (function(){
       $("#font-size").slider({ min: 10, value:36, max: 48})
 
       $("#button-text").bind("input",refreshButton);
-      $("#button-text").bind("input",checkIfEmpty);
       $("button").click( function( event) { event.preventDefault(); })
       window.onload = refreshButton;
       $("#html-code").bind("input",function(e) { data.setXmpHtmlCode(); });
