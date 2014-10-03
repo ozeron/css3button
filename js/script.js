@@ -39,6 +39,7 @@ var data = (function(){
     };
     this.css_code = generateCss();
     this.html_code = generateHtml();
+    this.email = $("#email").val();
     data.setButtonHtml();
     data.setButtonCss();
     data.setXmpHtmlCode();
@@ -90,14 +91,27 @@ var action = (function(){
     }
     console.log($(id));
   }
+  function get_result(data,status,xhr){
+    alert(data);
+  }
   function submit(event){
+    data.update();
     $("#send-form").submit();
-    addInputData("width",data.width);
-    addInputData("height",data.height);
-    addInputData("size",data.size);
-    addInputData("border_size",data.border_size);
-    addInputData("border_radius",data.border_radius);
-    addInputData("inner_text",data.inner_text);
+    $.ajax({
+      url:"send.php",
+      success:get_result,
+      type:"get",
+      data:{
+        "email":data.email,
+        "width":data.width,
+        "height":data.height,
+        "size":data.size,
+        "border_size":data.border_size,
+        "border_radius":data.border_radius,
+        "inner_text":data.inner_text
+      }
+    });
+    return false;
   }
   return{
     submit:submit
