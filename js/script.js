@@ -119,10 +119,24 @@ var action = (function(){
 })();
 
 var app = (function(){
+  function msieversion() {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
+      return(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
+    else
+      return(0);
+  }
+
   function refreshButton() {
     data.update();
   };
   return {
+    addPie: function() {
+      if ( msieversion() <= 8){
+        $(".ui-slider-handle").css({"display": "none"})
+      }
+    },
     init:function() {
       $(".slider").slider({
         orientation: "horizontal",
@@ -148,3 +162,4 @@ var app = (function(){
   };
 })();
 app.init();
+app.addPie();

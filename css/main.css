@@ -17,11 +17,11 @@ div,span,xmp,input{
 h2 {
   text-align: center;
 }
-}
 body {
   font-family: 'Open Sans', Arial, sans-serif;
 }
 button {
+  position:relative;
   background-color: #c24c4c;
   color: white;
   display: inline-block;
@@ -47,11 +47,13 @@ input[type="text"] {
   margin-left: 10px;
   font-size: 16px;
   max-width: 100%;
+  border-size: 1px;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   text-align: center;
   display: inline-block;
+  behavior: url("libs/pie/PIE.htc");
 }
 .wrapper {
   width: 90%;
@@ -89,10 +91,13 @@ input[type="text"] {
 .result,.code {
   text-align: center;
 }
-.slider, .ui-slider-range {
+.ui-slider, .ui-slider-range {
+  cursor: default;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+
+  behavior: url("libs/pie/PIE.htc");
 }
 .ui-slider-range {
   background-color: #e26161;
@@ -101,9 +106,10 @@ input[type="text"] {
   background-color: #7f3636;
 }
 .ui-slider-handle {
-  border-radius: 100%;
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  sbehavior: url("libs/pie/PIE.htc");
   background-color: #c24c4c !important;
 }
 .send{
@@ -123,6 +129,7 @@ input[type="text"] {
   -moz-border-radius:15px;
   -webkit-border-radius:15px;
   border-radius:10px;
+  behavior: url("libs/pie/PIE.htc");
   font-size:16px;
 }
 xmp {
@@ -157,6 +164,7 @@ xmp {
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
+    behavior: url("libs/pie/PIE.htc");
   }
   .download li a{
     text-decoration: none;
