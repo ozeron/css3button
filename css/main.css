@@ -11,6 +11,13 @@
 a:visited, a {
   color: white;
 }
+div,span,xmp,input{
+  outline:none !important;
+}
+h2 {
+  text-align: center;
+}
+}
 body {
   font-family: 'Open Sans', Arial, sans-serif;
 }
@@ -35,12 +42,16 @@ footer {
   text-align: center;
 }
 input[type="text"] {
+  height: 30px;
+  width: 200px;
+  margin-left: 10px;
+  font-size: 16px;
   max-width: 100%;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   text-align: center;
-  display: block;
+  display: inline-block;
 }
 .wrapper {
   width: 90%;
@@ -70,6 +81,7 @@ input[type="text"] {
 }
 
 .code-wrapper{
+  padding: 10px 0px;
   text-align: center;
   width: 100%;
 }
@@ -94,7 +106,25 @@ input[type="text"] {
   -webkit-border-radius: 100%;
   background-color: #c24c4c !important;
 }
-
+.send{
+  margin-bottom: 50px;
+}
+.button{
+  display: inline-block;
+  background-color: #c24c4c;
+  color: white;
+  display: inline-block;
+  border-style: solid;
+  border-color: #7f3636;
+  max-width: 100% !important;
+  width:100px;
+  height:45px;
+  border-width:2px;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  border-radius:10px;
+  font-size:16px;
+}
 xmp {
   display: inline-block;
   width: 100%;
@@ -128,20 +158,20 @@ xmp {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
   }
+  .download li a{
+    text-decoration: none;
+  }
   .setup {
     border-right: 1px dashed #c24c4c;
   }
   .code {
     border-top: 1px dashed #c24c4c;
+    border-bottom: 1px dashed #c24c4c;
     clear: both;
   }
 }
 
 @media (min-width: 675px){
-  .code {
-    border-top: 1px dashed #c24c4c;
-    clear: both;
-  }
   .code-wrapper{
     text-align: center;
     float: left;
